@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="workshopApp">
+    <head>
+        <title>AngularJS Workshop</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+    </head>
+    <body style="padding-left: 10px" ng-controller="homeController">
+        <div><h1>Pel&iacute;culas</h1></div>
+        <br>
+        <hr>
+        <h2>Agregar una nueva pel&iacute;cula</h2>
+        
+        <form name="movieForm" novalidate>
+
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="name" class="control-label">Nombre: </label>
+                        <input id="name" class="form-control" type="text" ng-model="movie.name" required/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="director" class="control-label">Director: </label>
+                        <input id="director" class="form-control" type="text" ng-model="movie.director" required/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="genre" class="control-label">G&eacute;nero: </label>
+                        <input id="genre" class="form-control" type="text" ng-model="movie.genre" required/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="income" class="control-label">Recaudo bruto: </label>
+                        <input id="income" class="form-control" type="number" ng-model="movie.grossIncome" required/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="rating" class="control-label">Calificaci&oacute;n: </label>
+                        <input id="rating" class="form-control" type="number" ng-model="movie.rating" required/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="releaseDate" class="control-label">Fecha de estreno: </label>
+                        <input id="releaseDate" class="form-control" type="date" ng-model="movie.releaseDate" required/>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" ng-disabled="movieForm.$invalid" ng-click="createMovie()">Agregar</button>
+
+        </form>
+        <div class="row">
+
+        </div>
+        <br>
+
+        <hr>
+        <div class="row">
+
+            <div class="col-lg-5">
+                <h2>Pel&iacute;culas</h2>
+                <div ng-repeat="movie in movies">
+                    <h3><b>{{movie.name}}</b></h3>
+                    <h4>Director: <b>{{movie.director}}</b></h4>
+                    <h4>Calificaci&oacute;n: <b>{{movie.rating}}</b></h4>
+                    <hr>
+                </div>
+            </div>
+
+        </div>
+
+
+        <script src="js/lib/jquery-1.11.1.min.js"></script>
+        <script src="js/lib/lodash.min.js"></script>
+        <script src="js/lib/angular.min.js"></script>
+        <script src="js/moduleRegistration.js"></script>
+        <script src="js/services/movieService.js"></script>
+        <script src="js/controllers/homeController.js"></script>
+        
+        <script src="js/app.js"></script>
+    </body>
+
+
+</html>
