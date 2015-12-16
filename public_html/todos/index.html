@@ -60,7 +60,8 @@ and open the template in the editor.
             <div class="col-lg-5">
                 <h2>Tareas Terminadas</h2>
                 <div ng-repeat="task in finishedTasks">
-                    <h3><b>{{task.name}}</b></h3>
+                    <h3><b>{{task.name}}</b> 
+                        <button class="btn btn-xs"><i class="glyphicon glyphicon-pencil"></i></button></h3>
                     
                     <p>{{task.description}}</p>
                     <button type="button" class="btn btn-secondary" ng-click="reopenTask(task)">Reabrir</button>
