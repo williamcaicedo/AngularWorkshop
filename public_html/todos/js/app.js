@@ -21,7 +21,7 @@ serviceModule.factory('persistenceService', ['_', function(_) {
             var tasks = JSON.parse(localStorage.getItem('tasks')) || [];
             return tasks; 
         }
-    }    
+    };    
 }]);
 
 
